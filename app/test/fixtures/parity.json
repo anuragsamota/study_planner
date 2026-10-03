@@ -1,0 +1,362 @@
+{
+ "now": "2026-10-05T08:00:00",
+ "document": {
+  "profile": {
+   "name": "Ada",
+   "daily_goal_minutes": 120,
+   "session_minutes": 45,
+   "break_minutes": 10,
+   "max_sessions_per_day": 4,
+   "preferred_time": "evening",
+   "utc_offset_minutes": 0,
+   "availability": {
+    "1": [
+     {
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "2": [
+     {
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "3": [
+     {
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "4": [
+     {
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "5": [
+     {
+      "start": "17:00",
+      "end": "21:00"
+     }
+    ],
+    "6": [
+     {
+      "start": "10:00",
+      "end": "13:00"
+     }
+    ],
+    "7": [
+     {
+      "start": "15:00",
+      "end": "18:00"
+     }
+    ]
+   }
+  },
+  "subjects": [
+   {
+    "id": "math",
+    "name": "Mathematics",
+    "difficulty": 4,
+    "proficiency": 2,
+    "target_minutes_per_week": 180
+   },
+   {
+    "id": "phys",
+    "name": "Physics",
+    "difficulty": 4,
+    "proficiency": 3,
+    "target_minutes_per_week": 120,
+    "exam_date": "2026-10-14"
+   },
+   {
+    "id": "hist",
+    "name": "History",
+    "difficulty": 2,
+    "proficiency": 5,
+    "target_minutes_per_week": 90,
+    "ai_weight": 0.7
+   },
+   {
+    "id": "chem",
+    "name": "Chemistry",
+    "difficulty": 3,
+    "proficiency": 3
+   }
+  ],
+  "tasks": [
+   {
+    "id": "t1",
+    "subject_id": "math",
+    "title": "Problem set 4",
+    "type": "assignment",
+    "due": "2026-10-07",
+    "priority": 3,
+    "estimated_minutes": 120,
+    "completed_minutes": 30,
+    "status": "in_progress"
+   },
+   {
+    "id": "t2",
+    "subject_id": "phys",
+    "title": "Lab report",
+    "type": "project",
+    "due": "2026-10-12T09:00:00",
+    "priority": 2,
+    "estimated_minutes": 180,
+    "completed_minutes": 0,
+    "status": "todo"
+   },
+   {
+    "id": "t3",
+    "subject_id": "hist",
+    "title": "Essay",
+    "type": "assignment",
+    "due": "2026-10-20",
+    "priority": 1,
+    "estimated_minutes": 90,
+    "completed_minutes": 0,
+    "status": "todo"
+   },
+   {
+    "id": "t4",
+    "subject_id": "chem",
+    "title": "Read ch. 5",
+    "type": "reading",
+    "due": null,
+    "priority": 2,
+    "estimated_minutes": 60,
+    "completed_minutes": 0,
+    "status": "todo"
+   },
+   {
+    "id": "t5",
+    "subject_id": "math",
+    "title": "Old quiz",
+    "type": "exam",
+    "due": "2026-10-01",
+    "priority": 3,
+    "estimated_minutes": 60,
+    "completed_minutes": 60,
+    "status": "done"
+   }
+  ],
+  "sessions": [
+   {
+    "id": "s1",
+    "subject_id": "math",
+    "title": "x",
+    "start": "2026-10-02T18:00:00",
+    "duration_minutes": 50,
+    "status": "completed",
+    "source": "manual",
+    "focus_rating": 2
+   },
+   {
+    "id": "s2",
+    "subject_id": "hist",
+    "title": "x",
+    "start": "2026-10-03T10:00:00",
+    "duration_minutes": 45,
+    "status": "completed",
+    "source": "auto",
+    "focus_rating": 5
+   },
+   {
+    "id": "s3",
+    "subject_id": "phys",
+    "title": "x",
+    "start": "2026-10-04T15:00:00",
+    "duration_minutes": 45,
+    "status": "planned",
+    "source": "auto"
+   },
+   {
+    "id": "s4",
+    "subject_id": "chem",
+    "title": "Tutor",
+    "start": "2026-10-06T18:00:00",
+    "duration_minutes": 60,
+    "status": "planned",
+    "source": "manual"
+   },
+   {
+    "id": "s5",
+    "subject_id": "math",
+    "title": "old auto",
+    "start": "2026-10-07T17:00:00",
+    "duration_minutes": 45,
+    "status": "planned",
+    "source": "auto"
+   }
+  ],
+  "scores": [
+   {
+    "id": "q1",
+    "subject_id": "math",
+    "title": "Quiz",
+    "score": 11,
+    "max_score": 20,
+    "date": "2026-09-28"
+   },
+   {
+    "id": "q2",
+    "subject_id": "hist",
+    "title": "Test",
+    "score": 92,
+    "max_score": 100,
+    "date": "2026-09-30"
+   }
+  ],
+  "version": 1,
+  "updated_at": "2026-10-03T16:09:33"
+ },
+ "expected_sessions": [
+  {
+   "start": "2026-10-05T17:00:00",
+   "duration_minutes": 45,
+   "subject_id": "math",
+   "task_id": "t1",
+   "title": "Problem set 4",
+   "notes": "Assignment due in 2 days · high priority"
+  },
+  {
+   "start": "2026-10-05T17:55:00",
+   "duration_minutes": 45,
+   "subject_id": "math",
+   "task_id": "t1",
+   "title": "Problem set 4",
+   "notes": "Assignment due in 2 days · high priority"
+  },
+  {
+   "start": "2026-10-05T18:50:00",
+   "duration_minutes": 45,
+   "subject_id": "phys",
+   "task_id": null,
+   "title": "Physics – focused practice",
+   "notes": "Exam in 9 days – revision"
+  },
+  {
+   "start": "2026-10-05T19:45:00",
+   "duration_minutes": 45,
+   "subject_id": "chem",
+   "task_id": "t4",
+   "title": "Read ch. 5",
+   "notes": "Reading no deadline · medium priority"
+  },
+  {
+   "start": "2026-10-06T17:00:00",
+   "duration_minutes": 45,
+   "subject_id": "phys",
+   "task_id": "t2",
+   "title": "Lab report",
+   "notes": "Project due in 5 days · medium priority"
+  },
+  {
+   "start": "2026-10-06T19:45:00",
+   "duration_minutes": 15,
+   "subject_id": "chem",
+   "task_id": "t4",
+   "title": "Read ch. 5",
+   "notes": "Reading no deadline · medium priority"
+  },
+  {
+   "start": "2026-10-07T17:00:00",
+   "duration_minutes": 45,
+   "subject_id": "phys",
+   "task_id": "t2",
+   "title": "Lab report",
+   "notes": "Project due in 4 days · medium priority"
+  },
+  {
+   "start": "2026-10-07T17:55:00",
+   "duration_minutes": 45,
+   "subject_id": "phys",
+   "task_id": "t2",
+   "title": "Lab report",
+   "notes": "Project due in 4 days · medium priority"
+  },
+  {
+   "start": "2026-10-07T18:50:00",
+   "duration_minutes": 45,
+   "subject_id": "hist",
+   "task_id": "t3",
+   "title": "Essay",
+   "notes": "Assignment due in 13 days · low priority"
+  },
+  {
+   "start": "2026-10-07T19:45:00",
+   "duration_minutes": 45,
+   "subject_id": "phys",
+   "task_id": "t2",
+   "title": "Lab report",
+   "notes": "Project due in 4 days · medium priority"
+  },
+  {
+   "start": "2026-10-08T17:00:00",
+   "duration_minutes": 45,
+   "subject_id": "hist",
+   "task_id": "t3",
+   "title": "Essay",
+   "notes": "Assignment due in 12 days · low priority"
+  },
+  {
+   "start": "2026-10-08T17:55:00",
+   "duration_minutes": 45,
+   "subject_id": "math",
+   "task_id": null,
+   "title": "Mathematics – revision",
+   "notes": "Keeping up with weekly target"
+  },
+  {
+   "start": "2026-10-09T17:00:00",
+   "duration_minutes": 45,
+   "subject_id": "math",
+   "task_id": null,
+   "title": "Mathematics – revision",
+   "notes": "Keeping up with weekly target"
+  },
+  {
+   "start": "2026-10-11T15:00:00",
+   "duration_minutes": 45,
+   "subject_id": "math",
+   "task_id": null,
+   "title": "Mathematics – revision",
+   "notes": "Keeping up with weekly target"
+  },
+  {
+   "start": "2026-10-11T15:55:00",
+   "duration_minutes": 45,
+   "subject_id": "chem",
+   "task_id": null,
+   "title": "Chemistry – revision",
+   "notes": "Keeping up with weekly target"
+  }
+ ],
+ "expected_kept_ids": [
+  "s1",
+  "s2",
+  "s3",
+  "s4"
+ ],
+ "expected_at_risk": [],
+ "expected_strength": {
+  "math": 0.52,
+  "phys": 0.278,
+  "hist": 0.968,
+  "chem": 0.5
+ },
+ "expected_summary": {
+  "total_minutes": 95,
+  "streak_days": 0,
+  "week_minutes": 95,
+  "best_period": "morning",
+  "weak": [
+   "Physics"
+  ],
+  "strong": [
+   "History"
+  ]
+ }
+}

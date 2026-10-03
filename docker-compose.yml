@@ -1,0 +1,41 @@
+# Self-host the AI backend: Ollama + the Study Planner MCP server.
+#
+#   cp .env.example .env   # set PLANNER_API_TOKEN
+#   docker compose up -d
+#   docker compose exec ollama ollama pull llama3.2
+#
+# In the app: Settings → AI → Ollama URL  http://<this-host>:11434
+#                              MCP server  http://<this-host>:8765/mcp  (+ token)
+# For internet-facing deployments put both behind HTTPS (e.g. Caddy/nginx).
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    environment:
+      OLLAMA_HOST: 0.0.0.0
+      # Allow the Flutter web build (browser) to call Ollama directly.
+      OLLAMA_ORIGINS: "*"
+    volumes:
+      - ollama:/root/.ollama
+    # Uncomment for NVIDIA GPUs:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+
+  planner-mcp:
+    build: ./server
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      PLANNER_API_TOKEN: ${PLANNER_API_TOKEN:?set PLANNER_API_TOKEN in .env}
+      PLANNER_CORS_ORIGINS: ${PLANNER_CORS_ORIGINS:-*}
+    volumes:
+      - planner-data:/data
+
+volumes:
+  ollama:
+  planner-data:
