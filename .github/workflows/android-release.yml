@@ -1,8 +1,9 @@
 name: Android release
 
 # Builds release APKs split per ABI (armeabi-v7a, arm64-v8a, x86_64).
-# Run it from the Actions tab ("Run workflow"), or push a tag like v1.0.0 to
-# also publish the APKs as a GitHub Release.
+# Runs on pull requests touching the app (APKs downloadable from the run),
+# from the Actions tab ("Run workflow"), or on a tag like v1.0.0, which also
+# publishes the APKs as a GitHub Release.
 #
 # Optional signing secrets (otherwise the debug key is used):
 #   ANDROID_KEYSTORE_BASE64   base64 of your upload keystore (.jks)
@@ -12,6 +13,8 @@ name: Android release
 
 on:
   workflow_dispatch:
+  pull_request:
+    paths: ["app/**", ".github/workflows/android-release.yml"]
   push:
     tags: ["v*"]
 
