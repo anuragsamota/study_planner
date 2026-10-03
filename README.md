@@ -114,6 +114,29 @@ set a token on the server, enter it too. The coach then works in **agent mode** 
 | `PLANNER_CORS_ORIGINS` | `*` | Browser origins allowed to connect (for the web build). |
 | `PLANNER_TRANSPORT` | `http` | Set to `stdio` for desktop MCP hosts. |
 
+## Building Android APKs
+
+Split per ABI, so each APK is smaller and contains only one CPU architecture:
+
+```bash
+cd app
+flutter build apk --release --split-per-abi
+# -> build/app/outputs/flutter-apk/app-{armeabi-v7a,arm64-v8a,x86_64}-release.apk
+```
+
+Most phones need **arm64-v8a**. Older 32-bit phones need armeabi-v7a, and emulators or Chromebooks need x86_64.
+
+You can also build them on GitHub: go to **Actions → Android release → Run workflow**, then download the
+`study-planner-apks` artifact. Pushing a `v*` tag (for example `git tag v1.0.0 && git push --tags`) also
+attaches the APKs to a GitHub Release.
+
+**Signing.** Without a keystore, release APKs are signed with the debug key. They install fine, but Google Play
+won't accept them. To sign for real, [create an upload keystore](https://docs.flutter.dev/deployment/android#sign-the-app),
+then either:
+- **Locally:** create `app/android/key.properties` (it is gitignored) containing `storeFile`, `storePassword`, `keyAlias` and `keyPassword`.
+- **In CI:** add the repository secrets `ANDROID_KEYSTORE_BASE64` (`base64 -w0 upload-keystore.jks`),
+  `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` and `ANDROID_KEY_PASSWORD`.
+
 ## Deployment options
 
 | Setup | How |
