@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "news-researcher"
+version = "0.1.0"
+description = "Multi-source news researcher: an agentic RAG pipeline built on LangGraph"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=1.0",
+    "langchain-core>=1.0",
+    "pydantic>=2.6",
+    "httpx>=0.27",
+    "feedparser>=6.0",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+anthropic = ["langchain-anthropic>=1.0"]
+ollama = ["langchain-ollama>=1.0"]
+chroma = ["chromadb>=1.0"]
+all = ["langchain-anthropic>=1.0", "langchain-ollama>=1.0", "chromadb>=1.0"]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+news-researcher = "news_researcher.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
