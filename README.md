@@ -205,3 +205,7 @@ Set `E2E_OLLAMA_URL` to a real Ollama (and `E2E_MODEL` to a model you have) to t
 - All data stays on the device unless you connect a remote Ollama or an MCP server.
 - API keys and tokens are saved in the app's local preferences. They are not encrypted, so treat the device as trusted.
 - Plain-HTTP connections are allowed so that Ollama on your LAN works. Use HTTPS for anything that goes over the internet.
+
+## Also in this repo
+
+- [`news_researcher/`](news_researcher/) — Multi-Source News Researcher: an agentic RAG pipeline on LangGraph that decomposes research questions, retrieves from news APIs, web search and a vector DB, and writes citation-grounded reports with contradiction detection and timelines.

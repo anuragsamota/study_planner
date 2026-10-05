@@ -3,3 +3,4 @@ server/data/
 **/__pycache__/
 .pytest_cache/
 *.egg-info/
+.news_researcher/
